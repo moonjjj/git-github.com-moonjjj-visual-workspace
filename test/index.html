@@ -5,15 +5,280 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body,html{
+        margin:0;
+        padding:0;
+    }
+    .content_wrap{
+        padding: 0 6vw;
+    }
+    .header_container{
+        display:flex;
+        align-items:center;
+        border-bottom:1px solid #3ab0e7;
+        justify-content: space-evenly;
+    }
+    .list_container {
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+        padding-left: 6em;
+    }
+    .logo_container img{
+        width: 13.75em;
+        height: 7.25em;
+    }
+
+    /* contents */
+    
+    .img_first{
+        width:100%;
+        height:600px;
+    }
+    .content_div2{
+        border-top:1px solid #3ab0e7;
+        border-bottom:1px solid #3ab0e7;
+        width:100%;
+        margin:20px auto;
+        display:flex;
+        justify-content: center;
+        margin-bottom:50px;
+        padding-top: 50px;
+        height:400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .content_div2 p{
+        font-size:50px;
+        font-weight:700;
+    }
+    .img_second{
+        width:75%;
+        height:500px;
+    }
+    .div3_title{
+        text-align: center;
+        font-weight: 700;
+        font-size:20px;
+    }
+    .img_third{
+        width:100%;
+        height:300px;
+    }
+
+    /* content_last */
+    ul.list {padding-left:0;list-style:none;}
+ul.list > li {padding: 3px 0 3px 15px;line-height: 20px;color:#656565;background: url(../images/dot.png) no-repeat 5px 11px}
+ul.process {padding:0;list-style: none;border-top: 1px solid #e1e3e6 }
+ul.process > li{position: relative;padding:35px 0 30px 150px;border-bottom:1px solid #e1e3e6}
+ul.process > li::after {content: '';display: block;position: absolute;left: 53px;bottom: -19px;
+    width: 20px;height: 20px;border-top:20px solid #fff;border-left:20px solid transparent;border-right:20px solid transparent}
+ul.process > li::before {content: '';display: block;position: absolute;left: 53px;bottom: -20px;
+    width: 20px;height: 20px;border-top:20px solid #ddd;border-left:20px solid transparent;border-right:20px solid transparent}
+ul.process > li:last-child::after {display: none}
+ul.process > li:last-child::before {display: none}
+ul.process > li .num {position: absolute;top:50%;left:50px;margin-top:-15px;
+    font-family: 'Roboto',sans-serif;font-size:40px;color:#ff853b}
+ul.process > li .title{font-size:20px;color:#1a345e;font-weight: 400}
+@media screen and (max-width: 767px){
+    ul.process > li::before,
+    ul.process > li::after{left:12px;border-width: 15px}
+    ul.process > li{padding:35px 0 15px 50px}
+    ul.process > li .num{top:34px;left:10px;margin-top:0;font-size: 27px}
+}
+ul.process_hor{width: 80%;
+    margin: 0 auto;padding:0;list-style: none;border-top: 1px solid #e7e7e7;border-left: 1px solid #e7e7e7;margin-top:30px}
+ul.process_hor:after{content:"";display: table;clear:both}
+ul.process_hor > li{float:left;position:relative;border-right:1px solid #e7e7e7;border-bottom:1px solid #e7e7e7;color:#646464}
+ul.process_hor > li{height:170px}
+ul.process_hor > li.color{background: #f9f9f9}
+ul.process_hor > li.color.right::after{border-left-color:#f9f9f9}
+ul.process_hor > li.color.bottom::after{border-top-color:#f9f9f9}
+ul.process_hor > li.color.left::after{border-right-color:#f9f9f9}
+ul.process_hor > li::after,
+ul.process_hor > li::before{
+    content:'';display: block;position: absolute;border-color: transparent;z-index: 1}
+/* bottom */
+ul.process_hor > li.bottom::after{margin-left:-10px;left: 50%;bottom: -8px;
+    border-top:10px solid #fff;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:none}
+ul.process_hor > li.bottom::before{margin-left:-10px;left: 50%;bottom: -9px;
+    border-top:10px solid #ddd;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:none}
+/* right */
+ul.process_hor > li.right::after{margin-top:-10px;top: 50%;right: -18px;
+    border-left:10px solid #fff;;border-top:10px solid transparent;border-right:10px solid transparent;border-bottom:10px solid transparent;}
+ul.process_hor > li.right::before{margin-top:-10px;top: 50%;right: -19px;
+    border-left:10px solid #ddd;border-top:10px solid transparent;border-right:10px solid transparent;border-bottom:10px solid transparent;}
+/* left */
+ul.process_hor > li.left::after{margin-top:-10px;top: 50%;left: -18px;
+    border-right:10px solid #fff;;border-top:10px solid transparent;border-left:10px solid transparent;border-bottom:10px solid transparent;}
+ul.process_hor > li.left::before{margin-top:-10px;top: 50%;left: -19px;
+    border-right:10px solid #ddd;border-top:10px solid transparent;border-left:10px solid transparent;border-bottom:10px solid transparent;}
+
+ul.process_icon {display:inline-block;margin-bottom:30px;padding:0;list-style: none}
+ul.process_icon:after{content:"";display: table;clear:both}
+ul.process_icon > li{float:left;position:relative;margin-right: 60px;width:120px;height:120px;text-align: center}
+ul.process_icon > li:last-child{margin-right: 0}
+ul.process_icon > li:after{content:"";display: block;position: absolute;top:50%; right:-50px;
+    width:40px;border-top:1px solid #ddd}
+ul.process_icon > li:last-child:after{display: none}
+ul.process_icon > li > i{display: block;margin:15px auto 5px;width:65px;height:65px;}
+@media screen and (max-width: 767px){
+    ul.process_icon > li {margin-right:20px;width:80px;height:90px;font-size:14px}
+    ul.process_icon > li:after{width:10px;right:-15px}
+    ul.process_icon > li > i{margin-top:5px;width:55px;height:55px;background-size: cover !important}
+}
+
+ul.numbering {padding:0;list-style: none;border-top: 1px solid #e1e3e6 }
+ul.numbering > li {position: relative;padding:35px 0 30px 150px;border-bottom:1px solid #e1e3e6}
+ul.numbering > li .num{position: absolute;top:50%;left:50px;margin-top:-15px;
+    font-family: 'Roboto',sans-serif;font-size:40px;color:#0e95d6}
+ul.numbering .title{font-weight:600}
+ul.numbering > li > p:last-child{margin-bottom:0}
+@media screen and (max-width: 767px){
+    ul.numbering > li{padding:25px 0 15px 35px}
+    ul.numbering > li .num{top:25px;left:8px;margin-top:0;font-size: 20px;}
+    /*ul.numbering > li .num{top:19px;left:5px;margin-top:0;padding:5px 10px 4px;
+        font-size: 14px;color:#fff;background: #1a345e;}*/
+    ul.numbering > li > ul.list{margin-left:-25px}
+}
+ul.process_hor > li{padding-top:20px;width:25%;height:200px;text-align:center;vertical-align:middle;box-sizing:border-box}
+
+.visible-xs {
+    display: none !important;}
+@media screen and (max-width: 767px){
+.visible-xs {
+    display: block !important;
+    margin-top:17px !important}
+.hidden-xs{display: none !important;}
+ul.process_hor > li {width: 50% !important;}
+
+}
+
+p.title {font-size: 22px; line-height:28px; margin-bottom: 14px;font-weight:500;color:#3ab0e7}
+li a {
+    display: inline-block;
+    padding: 10px 48px;
+    color: #323232;
+    border: 1px solid #969696;
+    margin-top: 22px;
+    text-decoration: none;
+}
+.footer-address{
+    margin-top:50px;
+    padding-top:50px;
+    border-top:1px solid #3b2a3b;
+    font-size:13px;
+}
+</style>
 <body>
-    just moment
-    <div class="test" id="test">
-        hello
+    <header class="header_wrap">
+        <div class="header_container">
+            <div class="logo_container">
+                <img src="image/ejb_logo.png" alt="">
+            </div>
+            <div class="list_container">
+                <span>학습이력</span>
+                <span>목표설정</span>
+                <span>진로활동</span>
+                <span>포트폴리오</span>
+            </div>
+        </div>
+        <div class="content_wrap">
+        <content>
+            <img src="image/1094.jpg" alt="" class="img_first">
+        </content>
     </div>
+        <div class="content_div2">
+            <p>플랜에듀를 소개할 수 있는 문구</p>
+            <p>PLANEDU</p>
+            <!-- <img src="image/content_div2.png" alt="" class="img_second"> -->
+        </div>
+        <div class="content_div3">
+            <p class="div3_title">플랜에듀 흐름도</p>
+            <!-- <img src="image/content_div3.png" alt="" class="img_third"> -->
+            <ul class="process_hor hidden-xs">
+                <li class="step1 color right">
+                    <p class="title">STEP 1</p>
+                    진로<br>목표설정<br>
+                    <a href="../goal/interest.ui">바로가기</a>
+                </li>
+                <li class="step2 right">
+                    <p class="title">STEP 2</p>
+                    프로그램<br>신청<br>
+                    <a href="../jinro/pgm.ui">바로가기</a>
+                </li>
+                <li class="step3 color right">
+                    <p class="title">STEP 3</p>
+                    프로그램<br>(동아리)수강<br>
+                    <a href="../jinro/circles.ui">바로가기</a>
+                </li>
+                <li class="step4">
+                    <p class="title">STEP 4</p>
+                    관심직업<br>탐색 &amp; 설정<br>
+                    <a href="../goal/interest.ui">바로가기</a>
+                </li>
+                <li class="step5 color right">
+                    <p class="title">STEP 5</p>
+                    고등학교<br>탐색 &amp; 설정<br>
+                    <a href="../goal/high.ui">바로가기</a>
+                </li>
+                <li class="step6 right">
+                    <p class="title">STEP 6</p>
+                    대학교<br>탐색 &amp; 설정<br>
+                    <a href="../goal/univ.ui">바로가기</a>
+                </li>
+                <li class="step7 color right">
+                    <p class="title">STEP 7</p>
+                    학과<br>탐색 &amp; 설정<br>
+                    <a href="../goal/dept.ui">바로가기</a>
+                </li>
+                <li class="step8">
+                    <p class="title">STEP 8</p>
+                    포트폴리오<br>제작<br>
+                    <a href="../history/portTemplate.ui">바로가기</a>
+                </li>
+             </ul>
+        </div>
+        <div class="append_me" id="append_meme">
+            1
+        </div>
+
+    </header>
+    <footer class="footer_wrap">
+            <div class="footer-address">
+                <div class="section">
+                    <address>
+                        <p><span>주소</span> 경기도 의정부시 신흥로234, 11층 스마트오피스 (의정부동,CRC빌딩) (주)플랜에듀</p>
+                        <p><span>TEL</span> 031)873-9350</p>
+                        <p><span>FAX</span> 031)629-7452</p>
+                        <p class="copyright">Copyright (C) 2020 by (주)플랜에듀 All Rights Reserved.</p>
+                        <p class="prohibit">본 홈페이지는 게시판 이메일 주소나 기타 정보수집 프로그램이나 그 밖의 기술적인 장치를 이용하여 무단으로 수집되는 것을 거부합니다.</p>
+                    </address>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 <script>
+    function scsc(){
+        window.addEventListener('scroll',function(){
+            var nowScroll = window.scrollY;
+            console.log(nowScroll);
+            if(nowScroll>450){
+                var app=document.getElementById("append_meme");
+                app.style.color = 'red';
+            }
+    })
+    }
 
-    var test = document.getElementById("test");
-    test.innerHTML="dd";
+    document.addEventListener("DOMContentLoaded", function(){
+        scsc();
+        
+    });
+
+
 </script>
 </html>
