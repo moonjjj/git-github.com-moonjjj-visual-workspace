@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,12 +31,24 @@
     }
 
     /* contents */
-    
+    content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position:relative;
+    }
+    .content_title{
+        position:absolute;
+        top:30px;
+        z-index: 1;
+        font-size:40px;
+    }
     .img_first{
-        width:100%;
+        
         height:600px;
         animation-name:title2;
     animation-duration: .3s;
+        opacity:0.8;
     }
     .content_div2{
         border-top:1px solid #3ab0e7;
@@ -47,7 +59,7 @@
         justify-content: center;
         margin-bottom:50px;
         padding-top: 50px;
-        height:400px;
+        height:500px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -73,6 +85,7 @@
         height:300px;
     }
     /* content_last */
+    .content_div3{height:600px; border-bottom:1px solid #3ab0e7;}
     ul.list {padding-left:0;list-style:none;}
 ul.list > li {padding: 3px 0 3px 15px;line-height: 20px;color:#656565;background: url(../images/dot.png) no-repeat 5px 11px}
 ul.process {padding:0;list-style: none;border-top: 1px solid #e1e3e6 }
@@ -230,6 +243,69 @@ img.img_second {
       opacity: 1;
       transform: none;
     }
+
+    /* div4 */
+    .content_div4{
+        height:550px;
+        border-bottom:1px solid #3ab0e7;
+    }
+    .list_container{
+        display:flex;
+        position:relative;
+        justify-content: space-around;
+        width:80%;
+        padding-top: 50px;
+    }
+    .list_container div{
+        transform:scale(1.2);
+    }
+    .content_list1, .content_list2, .content_list3, .content_list4{
+        width:200px;
+        height:300px;
+        border:3px solid #f9f9f9;
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        flex-direction: column;
+    }
+    .content_list1, .content_list3{
+        margin-top:50px;
+    }
+    /* div5 */
+    .content_div5{
+        display:flex;
+        justify-content: space-around;
+        align-items:center;
+        flex-direction: column;
+        height:450px;
+        position: relative;
+        border-bottom:1px solid #3ab0e7;
+    }
+    .join_img{
+        width:400px;
+        opacity:0.7;
+        position:absolute;
+        right:50px;
+        bottom:0;
+        z-index: -1;
+    }
+    .content_div5 span{
+        font-size:50px;
+        font-weight:700;
+    }
+    .div5_join_btn{
+        border:1px solid #3ab0e7;
+        border-radius: 30px;
+        width:200px;
+        height:70px;
+        text-decoration: none;
+        background-color: #3ab0e7;
+        color:#fff;
+        font-size: 20px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
 </style>
 <body>
     <header class="header_wrap">
@@ -246,7 +322,7 @@ img.img_second {
         </div>
         <div class="content_wrap">
         <content>
-            
+            <!-- <span class="content_title">청소년의 미래 꿈을 위한 플랜에듀</span> -->
             <img src="image/1094.jpg" alt="" class="img_first">
         </content>
     </div>
@@ -300,6 +376,33 @@ img.img_second {
                     <a href="#">바로가기</a>
                 </li>
              </ul>
+        </div>
+        <div class="content_div4">
+            <div class="list_container">
+                <div class="sa content_list1 ">
+                    플랜에듀는?
+                </div>
+                <div class="sa content_list2">
+                    <img src="image/info_img.png" alt="" style="width:200px">
+                    <span>다양한 교육시설</span>
+                    <span>교육 컨텐츠 정보 제공</span>
+                </div>
+                <div class="sa content_list3">
+                    <span>학생간의</span>
+                    <img src="image/student_img.png" alt="" style="width:200px">
+                    <span>교육 정보격차 해소</span>
+                </div>
+                <div class="sa content_list4">
+                    <img src="image/portfolio_img.png" alt="" style="width:200px">
+                    <span>개인의 포토폴리오를</span>
+                    <span>만들 수 있어요</span>
+                </div>
+            </div>
+        </div>
+        <div class="content_div5">
+            <span>플랜에듀를 시작해볼까요?</span>
+            <a href="#" class="div5_join_btn">JOIN</a>
+            <img src="image/join_img.png" alt="" class="join_img">
         </div>
         <div class="append_me" id="append_meme">
             1
