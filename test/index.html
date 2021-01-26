@@ -11,7 +11,7 @@
         padding:0;
     }
     .content_wrap{
-        padding: 0 6vw;
+        padding: 0 3vw;
     }
     .header_container{
         display:flex;
@@ -85,7 +85,7 @@
         height:300px;
     }
     /* content_last */
-    .content_div3{height:600px; border-bottom:1px solid #3ab0e7;}
+    .content_div3{height:600px; border-bottom:1px solid #3ab0e7;position: relative;}
     ul.list {padding-left:0;list-style:none;}
 ul.list > li {padding: 3px 0 3px 15px;line-height: 20px;color:#656565;background: url(../images/dot.png) no-repeat 5px 11px}
 ul.process {padding:0;list-style: none;border-top: 1px solid #e1e3e6 }
@@ -306,8 +306,25 @@ img.img_second {
         justify-content: center;
         align-items: center;
     }
+
+    .selector-container{z-index: 1;display:flex;width:300px;justify-content: space-between;position: absolute;left:50%;transform: translate(-50%,-50%);}
+    .middle-selector {cursor:pointer;background:#fff;width: 150px;text-align: center;border: 1px solid #3ab0e7;height: 46px;line-height: 3;}
+.high-selector {cursor:pointer;background:#fff;width: 150px;text-align: center;border: 1px solid #3ab0e7;height: 46px;line-height: 3;
+}
+.floating-menu{
+    position:fixed;
+    bottom: 20px;
+    right:30px;
+    width:200px;
+    height:300px;
+    background-color: #d2d2d2;
+    z-index: 1;
+}
 </style>
 <body>
+    <div class="floating-menu">
+        <span>hello</span>
+    </div>
     <header class="header_wrap">
         <div class="header_container">
             <div class="logo_container">
@@ -323,7 +340,7 @@ img.img_second {
         <div class="content_wrap">
         <content>
             <!-- <span class="content_title">청소년의 미래 꿈을 위한 플랜에듀</span> -->
-            <img src="image/1094.jpg" alt="" class="img_first">
+            <img src="image/airplane_copy2.png" alt="" class="img_first">
         </content>
     </div>
         <div class="content_div2">
@@ -335,6 +352,10 @@ img.img_second {
             <p class="div3_title">플랜에듀 흐름도</p>
             <!-- <img src="image/content_div3.png" alt="" class="img_third"> -->
             <ul class="process_hor hidden-xs">
+                <div class="selector-container">
+                    <div class="middle-selector">중학생</div>
+                    <div class="high-selector">고등학생</div>
+                </div>
                 <li class="sa step1 color right">
                     <p class="title">STEP 1</p>
                     진로<br>목표설정<br>
