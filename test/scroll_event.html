@@ -94,7 +94,17 @@
       <div class="sa sa-scaleDown">디비전 12</div>
     </section>
   </main>
+  <div id="map" style="width:500px;height:400px;"></div>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	93aa311ae81078b6f32d4eb0a1f17480&libraries=services"></script>
+  <script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(33.450701, 126.570667),
+			level: 3
+		};
 
+		var map = new kakao.maps.Map(container, options);
+	</script>
   <script>
     // Scroll Animation (sa, 스크롤 애니메이션)
     const saTriggerMargin = 300;
