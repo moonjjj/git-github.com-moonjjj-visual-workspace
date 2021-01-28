@@ -321,10 +321,13 @@ img.img_second {
     border:1px solid #3ab0e7;
     border-radius: 13px;
     z-index: 1;
+    overflow:overlay;
 }
 ul{margin: 0; padding:0;}
 li{list-style: none;}
-.floating-title{border-bottom:1px solid #3ab0e7;padding:10px 0;text-align: center;}
+.floating-title{border-bottom:1px solid #3ab0e7;padding:10px 0;text-align: center;display: flex;}
+.floating-title span:first-child{width:50%;border-right:1px solid #d2d2d2;display: flex;justify-content: center;}
+.floating-title span{width:50%;display: flex;justify-content: center;cursor: pointer;}
 .floating-content ul{display:flex;justify-content: space-around;align-items: center; flex-direction: column;}
 .floating-content ul li span{display:inline-block; font-size:13px; text-align: center;}
 .floating-content ul li span:nth-child(2){width:44%; padding:5px 0;}
@@ -334,11 +337,26 @@ li{list-style: none;}
 .floating-menu-button a{background-color: #3ab0e7; padding:3px 10px; border-radius: 7px; color:#fff;}
 .ad-menu{position:absolute;bottom:0; left: 20px;}
 .img-down-arrow{position:absolute; bottom:20px; width:120px; height:80px}
+#floating-high{z-index: 0;}
+#floating-univ{z-index: 1;}
+.test_overflow{     
+    display:block;
+     width:70px;
+      padding:0 5px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      }
+
 </style>
 <body>
-    <div class="floating-menu">
+    <div class="test_overflow">
+        sdfafasfadsfadfads
+    </div>
+    <div class="floating-menu"id="floating-univ">
         <div class="floating-title">
-            <span>인기 대학교</span>
+            <span class="floating-menu_high" onclick="toggle_tab_high()" style="color:#d2d2d2">고등학교</span>
+            <span class="floating-menu_univ">대학교</span>
         </div>
         <div class="floating-content">
             <ul>
@@ -366,6 +384,37 @@ li{list-style: none;}
             </div>
         </div>
     </div>
+    <div class="floating-menu" id= "floating-high">
+        <div class="floating-title">
+            <span class="floating-menu_high">고등학교</span>
+            <span class="floating-menu_univ" style="color:#d2d2d2" onclick="toggle_tab_univ()">대학교</span>
+        </div>
+        <div class="floating-content">
+            <ul>
+                <li>
+                    <span>순위</span><span>고등학교명</span><span>학과구분</span><span>조회횟수</span>
+                </li>
+                <li class="floating-list">
+                    <span>1.</span><span>의정부고</span><span>디지털과</span><span>337건</span>
+                </li>
+                <li class="floating-list">
+                    <span>2.</span><span>가온고</span><span>금융정보과</span><span>332건</span>
+                </li>
+                <li class="floating-list">
+                    <span>3.</span><span>강원체육고</span><span>전자과</span><span>231건</span>
+                </li>
+                <li class="floating-list">
+                    <span>4.</span><span>청주농업고</span><span>동물자원</span><span>137건</span>
+                </li>
+                <li class="floating-list">
+                    <span>5.</span><span>강원체육고</span><span>체육학과</span><span>107건</span>
+                </li>
+            </ul>
+            <div class="floating-menu-button">
+                <a href="#">더 많은 고등학교 정보 보기</a>
+            </div>
+        </div>
+    </div>
     <div class="ad-menu">
         <img src="image/ad_exam.png" alt="" style="width:200px;height:400px">
     </div>
@@ -385,7 +434,7 @@ li{list-style: none;}
         <content>
             <!-- <span class="content_title">청소년의 미래 꿈을 위한 플랜에듀</span> -->
             <img src="image/airplane_copy2.png" alt="" class="img_first">
-            <img src="image/down_arrow.png" alt="" class="img-down-arrow">
+            <img src="image/down_arrow.png" alt="" class="img-down-arrow" onclick="down_btn()">
         </content>
     </div>
         <div class="content_div2">
@@ -491,22 +540,39 @@ li{list-style: none;}
     </footer>
 </body>
 <script>
-    function scsc(){
-        window.addEventListener('scroll',function(){
-            var nowScroll = window.scrollY;
-            console.log(nowScroll);
-            if(nowScroll>450){
-                var app=document.getElementById("append_meme");
-                app.style.color = 'red';
-            }
-    })
+    function toggle_tab_high(){
+        // 클래스를 display block으로 보이게하고 다른거는 display none 으로 바꿔버린다
+        var high = document.getElementById("floating-high");
+        high.style.zIndex="2";
+    }
+    function toggle_tab_univ(){
+        // 클래스를 display block으로 보이게하고 다른거는 display none 으로 바꿔버린다
+        var high = document.getElementById("floating-high");
+        high.style.zIndex="0";
     }
 
-    document.addEventListener("DOMContentLoaded", function(){
-        scsc();
-        
-    });
+    // function scsc(){
+    //     window.addEventListener('scroll',function(){
+    //         var nowScroll = window.scrollY;
+    //         console.log(nowScroll);
+    //         if(nowScroll>450){
+    //             var app=document.getElementById("append_meme");
+    //             app.style.color = 'red';
+    //         }
+    // })
+    // }
 
+    // document.addEventListener("DOMContentLoaded", function(){
+    //     scsc();
+        
+    // });
+
+    function down_btn(){
+        window.scrollTo({
+            top:760,
+            behavior:'smooth'
+        });
+    }
 
 
     // Scroll Animation (sa, 스크롤 애니메이션)
