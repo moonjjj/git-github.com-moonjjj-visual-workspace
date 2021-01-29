@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    ul,li{margin:0;padding:0;list-style: none;}
+    .list-container{display:flex;justify-content: space-around;}
+    .list-inner{
+        width:400px;
+        height:400px;
+        border-radius: 5px;
+        box-shadow: 0 0 15px #d2d2d2;
+    }
+    .list-ul{padding:0 15px; text-align: center;}
+    .list-ul li:first-child{padding:15px 0; border-bottom:1px solid #3ab0e7; margin-bottom:10px;}
+    .list-li{padding:6px 0; border-bottom:0.5px solid #d2d2d2;}
+    .list-li span{ display:inline-block;}
+    .list-li-rank{width:10%;}
+    .list-li-job{width:70%; transition:all .5s ease-in-out;}
+    .job1{transform: scale(1.2); text-shadow: 0 0 15px #d2d2d2 ; font-weight: 700;}
+    .list-li-hit{width:20%;}
+    .chart-img{width:400px; height:400px; opacity: 0.3; position:absolute; bottom:158px; right:0; z-index: -9999;}
+</style>
+<body>
+   <div class="list-container">
+    <div class="list-div">
+    <h1>PLAN EDU HOT CLICK!</h1>
+    <div class="list-inner">
+        <ul class="list-ul">
+            <li class="list-li">
+                <span class="list-li-rank">순위</span><span class="list-li-job">직업명</span><span class="list-li-hit">조회수</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">1</span><span class="list-li-job">병원중앙공급실관리자</span><span class="list-li-hit">33건</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">2</span><span class="list-li-job job2">신문판매국장</span><span class="list-li-hit">30건</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">3</span><span class="list-li-job job3">소방서장</span><span class="list-li-hit">22건</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">4</span><span class="list-li-job job4">국제투자사무관리자</span><span class="list-li-hit">17건</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">5</span><span class="list-li-job job5">간호부장</span><span class="list-li-hit">15건</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">6</span><span class="list-li-job job6">부동산관리자</span><span class="list-li-hit">5건</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">7</span><span class="list-li-job job7">농업용수관리자</span><span class="list-li-hit">5건</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">8</span><span class="list-li-job job8">스파매니저</span><span class="list-li-hit">5건</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">9</span><span class="list-li-job job9">프로그래머</span><span class="list-li-hit">3건</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">10</span><span class="list-li-job job10">세탁소관리자</span><span class="list-li-hit">1건</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="list-div">
+    <h1>청소년 인기 직업</h1>
+    <div class="list-inner">
+        <ul class="list-ul">
+            <li class="list-li">
+                <span class="list-li-rank">순위</span><span class="list-li-job">직업명</span><span class="list-li-hit">선호도</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">1</span><span class="list-li-job">병원중앙공급실관리자</span><span class="list-li-hit">76.3%</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">2</span><span class="list-li-job job2">신문판매국장</span><span class="list-li-hit">56.3%</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">3</span><span class="list-li-job job3">소방서장</span><span class="list-li-hit">46.3%</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">4</span><span class="list-li-job job4">국제투자사무관리자</span><span class="list-li-hit">40.3%</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">5</span><span class="list-li-job job5">간호부장</span><span class="list-li-hit">36.8%</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">6</span><span class="list-li-job job6">부동산관리자</span><span class="list-li-hit">26.3%</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">7</span><span class="list-li-job job7">농업용수관리자</span><span class="list-li-hit">25.3%</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">8</span><span class="list-li-job job8">스파매니저</span><span class="list-li-hit">22.7%</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">9</span><span class="list-li-job job9">프로그래머</span><span class="list-li-hit">17.5%</span>
+            </li>
+            <li class="list-li">
+                <span class="list-li-rank">10</span><span class="list-li-job job10">세탁소관리자</span><span class="list-li-hit">16.6%</span>
+            </li>
+        </ul>
+    </div>
+    </div>
+</div>
+<img src="image/chart.png" alt="" class="chart-img">
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        scale_up();
+        scale_up2();
+        setInterval(scale_up,30000);
+        setInterval(scale_up2,30000);
+    });
+    
+    const timer = ms => new Promise(res=>setTimeout(res,ms))
+    async function scale_up(){
+        for(var i=1; i<=10; i++){
+            document.getElementsByClassName("list-li-job")[i].classList.add("job1");
+            await timer(3000);
+            document.getElementsByClassName("list-li-job")[i].classList.remove("job1");
+        }
+    }
+    async function scale_up2(){
+        for(var i=12; i<=21; i++){
+            document.getElementsByClassName("list-li-job")[i].classList.add("job1");
+            await timer(3000);
+            document.getElementsByClassName("list-li-job")[i].classList.remove("job1");
+        }
+    }
+    
+
+</script>
+</html>
