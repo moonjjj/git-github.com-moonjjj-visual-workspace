@@ -132,6 +132,42 @@
             document.getElementsByClassName("list-li-job")[i].classList.remove("job1");
         }
     }
+    // 3보다 큰 애들만 반환하기
+    function biggerThanThree(numbers){
+        var sum = new Array();
+        for(var i = 0; i<numbers.length; i++){
+            if(numbers[i]>3){
+                sum.push(numbers[i]);
+            }
+        }
+        return sum;
+    }
+    const numbers=[1,2,3,4,5,6,7];
+    console.log(biggerThanThree(numbers));
+
+    //중복된 배열 제거하기
+    var arr = ['강아지','고양이','원숭이','제선이','유란이','고양이','돼징이','강아지'];
+
+    var arrChk = new Array();
+
+    var chk = true;
+
+    console. log ( arr );
+
+    for(var i = 0 ; i<arr.length; i++){
+        chk = true;
+        for(val in arrChk){
+            console.log(val+"value!");
+            console.log(arrChk.length+"length!");
+            if(arrChk[val] == arr[i]){
+                chk=false;
+            }
+        }
+        if(chk==true){
+            arrChk.push(arr[i]);
+        }
+    }
+    console.log(arrChk);
     
 
 </script>
