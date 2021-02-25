@@ -1,13 +1,16 @@
 {
 	"folders": [
 		{
-			"path": "../../Desktop/back&react/react-app/React-practice-1"
-		},
-		{
-			"path": "../../Desktop/back&react/react-live-test/react-live-test"
-		},
-		{
 			"path": "test"
+		},
+		{
+			"path": "../../Desktop/back--react/react-app"
+		},
+		{
+			"path": "../../Desktop/back--react/react-live-test"
+		},
+		{
+			"path": "../../Desktop/back--react/react-board"
 		}
 	],
 	"settings": {
